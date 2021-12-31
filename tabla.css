@@ -1,0 +1,185 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.2em;
+    background: rgb(155, 153, 153);
+    color: #fff;
+    font-weight: 300;
+}
+
+table {
+    margin: auto;
+    width: 45%;
+    height: 900px;
+    padding: 0%;
+    margin-top: -15px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#info {
+    width: 40%;
+    margin: auto;
+    padding: 0%;
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#kezdet {
+    text-align: center;
+    margin: auto;
+    display: block;
+    width: 40%;
+}
+
+.babuvalaszto, #start {
+    width: 75px;
+    height: 35px;
+    background: #0b7fba;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+#wordboxsz, #wordboxcsel {
+    /*opacity: 0;*/
+    margin: 10px auto;
+    display: block;
+    width: 275px;
+    height: 35px;
+    font-size: 25px;
+    text-align: center;
+    background: #fff;
+    border-radius: 6px;
+    color: black;
+    border-color: black;
+}
+
+#wordboxsz:disabled, #wordboxcsel:disabled {
+    background: rgb(175, 175, 175);
+    border-radius: 6px;
+    border-color: black;
+}
+
+#buttonf, #buttonk {
+    background: #0b7fba;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    padding: 1em 2em;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    display: block;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+#buttonf:hover, #buttonk:hover, .babuvalaszto:hover, #start:hover, #talalt:hover, #nemtalalt:hover, #next:hover {
+    background: #12b0ff;
+}
+
+#talalt, #nemtalalt, #next {
+    width: 150px;
+    height: 35px;
+    background: #0b7fba;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#vezerlo {
+    text-align: center;
+    margin: auto;
+}
+
+#talalt:disabled, #nemtalalt:disabled, #next:disabled, #buttonf:disabled, #buttonk:disabled, #lepes:disabled, 
+#egypont:disabled, #ketpont:disabled, #harompont:disabled, #negypont:disabled, #otpont:disabled {
+    background-color: rgb(43, 76, 77);
+}
+#talalt:disabled:hover, #nemtalalt:disabled:hover, #next:disabled:hover, #buttonf:disabled:hover, #buttonk:disabled:hover, 
+#egypont:disabled:hover, #ketpont:disabled:hover, #harompont:disabled:hover, #negypont:disabled:hover, #otpont:disabled:hover {
+    background-color: rgb(43, 76, 77);
+    cursor: text;
+}
+
+#plusznarancs, #pluszkek, #pluszzold, #pluszpiros, #pluszsarga {
+    background: #0b7fba;
+    border: 0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: auto;
+    display: block;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+    margin: auto;
+    width: 30px;
+    height: 50px;
+}
+
+#pluszkek {
+    background-image: url(kekbabu.png);
+    background-size: 30px 54px;
+}
+#pluszpiros {
+    background-image: url(pirosbabu.png);
+    background-size: 30px 54px;
+}
+#pluszsarga {
+    background-image: url(sargababu.png);
+    background-size: 30px 54px;
+    color: black;
+}
+#pluszzold {
+    background-image: url(zoldbabu.png);
+    background-size: 30px 54px;
+}
+#plusznarancs {
+    background-image: url(narancsbabu.png);
+    background-size: 30px 54px;
+}
+
+#narancsered, #kekered, #zoldered, #pirosered, #sargaered {
+    margin: 0%;
+    text-align: center;
+    padding: 0%;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 300;
+    color: black;
+}
+#kekered, #pirosered {
+    color: white;
+}
+#plusznarancs, #pluszkek, #pluszzold, #pluszpiros, #pluszsarga {
+    margin: auto;
+    margin-left: 1cm;
+    margin-top: -3px;
+}
+
+.babu {
+    display: block;
+    margin: auto;
+    margin-bottom: -52px;
+    width: 30px;
+    height: 50px;
+    visibility: hidden;
+}
+
+
+
+
+/*.szia {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
