@@ -1,0 +1,48 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.2em;
+    background: rgb(155, 153, 153);
+    color: #fff;
+    font-weight: 300;
+}
+
+h1 {
+    text-align: center;
+}
+
+#alcim {
+    margin-top: -20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#szabalyzat, #tablahoz, #kezdooldalra {
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    background: #0b7fba;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#szabalyzat:hover, #tablahoz:hover, #kezdooldalra:hover {
+    background: #12b0ff;
+}
+
+#szabalyok {
+    margin: auto;
+    margin-bottom: 30px;
+    width: 60%;
+    text-align: center;
+}

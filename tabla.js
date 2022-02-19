@@ -7,6 +7,7 @@ var narancs = 0;
 var nyert = 0;
 var szin = "";
 var nextplayer = 0;
+var ujpontozas = 0;
 //#endregion
 
 //#region oldal betoltes
@@ -23,7 +24,12 @@ function onLoadFunctions() {
     document.getElementById("otpont").disabled = true;
     document.getElementById("wordboxcsel").disabled = true;
     document.getElementById("wordboxsz").disabled = true;
-    document.getElementById("tabla").style = "visibility:hidden;"
+    document.getElementById("kektalalt").disabled = true;
+    document.getElementById("pirostalalt").disabled = true;
+    document.getElementById("sargatalalt").disabled = true;
+    document.getElementById("zoldtalalt").disabled = true;
+    document.getElementById("narancstalalt").disabled = true;
+    document.getElementById("tabla").style = "visibility: hidden"
 }
 window.onload = onLoadFunctions;
 //#endregion
@@ -97,12 +103,16 @@ function START(){
                 document.getElementById("narancsered").style = "transform: rotate(360deg); transition: transform 5.4s";
     
     if (szin == "Kék") {
+        document.getElementById("kekkep").style = "background-color: #009900"
+        document.getElementById("piroskep").style = "background-color: #ff9900"
         document.getElementById("buttonf").disabled = false;
         document.getElementById("buttonk").disabled = false;
         document.getElementById("wordboxcsel").disabled = false;
         document.getElementById("wordboxsz").disabled = false;
     } else {
-         document.getElementById("talalt").disabled = false;
+        document.getElementById("kekkep").style = "background-color: #009900"
+        document.getElementById("piroskep").style = "background-color: #ff9900"
+        document.getElementById("talalt").disabled = false;
         document.getElementById("nemtalalt").disabled = false;
         document.getElementById("wordboxcsel").disabled = true;
         document.getElementById("wordboxsz").disabled = true;
@@ -128,6 +138,19 @@ function lepes5() {
 function talalt(){
     document.getElementById("talalt").disabled = true;
     document.getElementById("nemtalalt").disabled = true;
+    document.getElementById("kektalalt").disabled = false;
+    document.getElementById("pirostalalt").disabled = false;
+    document.getElementById("sargatalalt").disabled = false;
+    document.getElementById("zoldtalalt").disabled = false;
+    document.getElementById("narancstalalt").disabled = false;
+}
+
+function talaltpont(){    
+    document.getElementById("kektalalt").disabled = true;
+    document.getElementById("pirostalalt").disabled = true;
+    document.getElementById("sargatalalt").disabled = true;
+    document.getElementById("zoldtalalt").disabled = true;
+    document.getElementById("narancstalalt").disabled = true;
     document.getElementById("egypont").disabled = false;
     document.getElementById("ketpont").disabled = false;
     document.getElementById("harompont").disabled = false;
@@ -135,29 +158,53 @@ function talalt(){
     document.getElementById("otpont").disabled = false;
 }
 
+function talaltpontoff() {
+    document.getElementById("egypont").disabled = true;
+    document.getElementById("ketpont").disabled = true;
+    document.getElementById("harompont").disabled = true;
+    document.getElementById("negypont").disabled = true;
+    document.getElementById("otpont").disabled = true;
+}
+
+function ujpontkek(){
+    ujpontozas = 0;
+}
+function ujpontpiros(){
+    ujpontozas = 1;
+}
+function ujpontsarga(){
+    ujpontozas = 2;
+}
+function ujpontzold(){
+    ujpontozas = 3;
+}
+function ujpontnarancs(){
+    ujpontozas = 4;
+}
+
 function lepes(){
-    if (nextplayer == 0){
+    if (ujpontozas == 0){
         pont += kek;
         for (let i = kek; i < pont; i++){
             pluszkek();
         }
-    } else if(nextplayer == 1){
+    } else if(ujpontozas == 1){
         pont += piros;
         for (let i = piros; i < pont; i++){
             pluszpiros();
         }
-    } else if(nextplayer == 2){
+    } else if(ujpontozas == 2){
         pont += sarga;
         for (let i = sarga; i < pont; i++){
             pluszsarga();
         }
-    } else if(nextplayer == 3){
+    } else if(ujpontozas == 3){
         pont += zold;
         for (let i = zold; i < pont; i++){
             pluszzold();
         }
     }
-    else if(nextplayer == 4){
+    else if(ujpontozas == 4){
         pont += narancs;
         for (let i = narancs; i < pont; i++){
             plusznarancs();
@@ -194,11 +241,19 @@ function next() {
 function kovijatekos(){
     if (nextplayer == 0){
         if (szin == "Kék") {
+            document.getElementById("kekkep").style = "background-color: #009900"
+            document.getElementById("piroskep").style = "background-color: #ff9900"
+            document.getElementById("narancskep").style = "background-color: #b00000"
+            document.getElementById("zoldkep").style = "background-color: none"
             document.getElementById("buttonf").disabled = false;
             document.getElementById("buttonk").disabled = false;
             document.getElementById("wordboxcsel").disabled = false;
             document.getElementById("wordboxsz").disabled = false;
         } else {
+            document.getElementById("kekkep").style = "background-color: #009900"
+            document.getElementById("piroskep").style = "background-color: #ff9900"
+            document.getElementById("narancskep").style = "background-color: #b00000"
+            document.getElementById("zoldkep").style = "background-color: none"
             document.getElementById("talalt").disabled = false;
             document.getElementById("nemtalalt").disabled = false;
             document.getElementById("wordboxcsel").disabled = true;
@@ -206,11 +261,19 @@ function kovijatekos(){
         }
     } else if (nextplayer == 1){
         if (szin == "Piros") {
+            document.getElementById("piroskep").style = "background-color: #009900"
+            document.getElementById("sargakep").style = "background-color: #ff9900"
+            document.getElementById("kekkep").style = "background-color: #b00000"
+            document.getElementById("narancskep").style = "background-color: none"
             document.getElementById("buttonf").disabled = false;
             document.getElementById("buttonk").disabled = false;
             document.getElementById("wordboxcsel").disabled = false;
             document.getElementById("wordboxsz").disabled = false;
         } else {
+            document.getElementById("piroskep").style = "background-color: #009900"
+            document.getElementById("sargakep").style = "background-color: #ff9900"
+            document.getElementById("kekkep").style = "background-color: #b00000"
+            document.getElementById("narancskep").style = "background-color: none"
             document.getElementById("talalt").disabled = false;
             document.getElementById("nemtalalt").disabled = false;
             document.getElementById("wordboxcsel").disabled = true;
@@ -218,11 +281,19 @@ function kovijatekos(){
         }
     } else if (nextplayer == 2){
         if (szin == "Sárga") {
+            document.getElementById("sargakep").style = "background-color: #009900"
+            document.getElementById("zoldkep").style = "background-color: #ff9900"
+            document.getElementById("piroskep").style = "background-color: #b00000"
+            document.getElementById("kekkep").style = "background-color: none"
             document.getElementById("buttonf").disabled = false;
             document.getElementById("buttonk").disabled = false;
             document.getElementById("wordboxcsel").disabled = false;
             document.getElementById("wordboxsz").disabled = false;
         } else {
+            document.getElementById("sargakep").style = "background-color: #009900"
+            document.getElementById("zoldkep").style = "background-color: #ff9900"
+            document.getElementById("piroskep").style = "background-color: #b00000"
+            document.getElementById("kekkep").style = "background-color: none"
             document.getElementById("talalt").disabled = false;
             document.getElementById("nemtalalt").disabled = false;
             document.getElementById("wordboxcsel").disabled = true;
@@ -230,11 +301,19 @@ function kovijatekos(){
         }
     } else if (nextplayer == 3){
         if (szin == "Zöld") {
+            document.getElementById("zoldkep").style = "background-color: #009900"
+            document.getElementById("narancskep").style = "background-color: #ff9900"
+            document.getElementById("sargakep").style = "background-color: #b00000"
+            document.getElementById("piroskep").style = "background-color: none"
             document.getElementById("buttonf").disabled = false;
             document.getElementById("buttonk").disabled = false;
             document.getElementById("wordboxcsel").disabled = false;
             document.getElementById("wordboxsz").disabled = false;
         } else {
+            document.getElementById("zoldkep").style = "background-color: #009900"
+            document.getElementById("narancskep").style = "background-color: #ff9900"
+            document.getElementById("sargakep").style = "background-color: #b00000"
+            document.getElementById("piroskep").style = "background-color: none"
             document.getElementById("talalt").disabled = false;
             document.getElementById("nemtalalt").disabled = false;
             document.getElementById("wordboxcsel").disabled = true;
@@ -242,11 +321,19 @@ function kovijatekos(){
         }
     } else if (nextplayer == 4){
         if (szin == "Narancs") {
+            document.getElementById("narancskep").style = "background-color: #009900"
+            document.getElementById("kekkep").style = "background-color: #ff9900"
+            document.getElementById("zoldkep").style = "background-color: #b00000"
+            document.getElementById("sargakep").style = "background-color: none"
             document.getElementById("buttonf").disabled = false;
             document.getElementById("buttonk").disabled = false;
             document.getElementById("wordboxcsel").disabled = false;
             document.getElementById("wordboxsz").disabled = false;
         } else {
+            document.getElementById("narancskep").style = "background-color: #009900"
+            document.getElementById("kekkep").style = "background-color: #ff9900"
+            document.getElementById("zoldkep").style = "background-color: #b00000"
+            document.getElementById("sargakep").style = "background-color: none"
             document.getElementById("talalt").disabled = false;
             document.getElementById("nemtalalt").disabled = false;
             document.getElementById("wordboxcsel").disabled = true;

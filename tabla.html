@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tabla.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Activity</title>
+    <link rel="icon" href="https://battlejungle.com/tournament_preset_images/active/5b019cd7d828f.jpeg" type="image/png">
+</head>
+
+<body>
+    <div id="info">
+        <h3 id="valaszt" style="font-size: 30px; text-align: center; margin: auto;">Melyik bábuval leszel?</h3>
+        <p id="utasitas"></p>
+    </div>
+    <div id="kezdet">
+        <button class="babuvalaszto" id="kekbabu" onclick="kekbabu()">Kék</button>
+        <button class="babuvalaszto" id="pirosbabu" onclick="pirosbabu()">Piros</button>
+        <button class="babuvalaszto" id="sargababu" onclick="sargababu()">Sárga</button>
+        <button class="babuvalaszto" id="zoldbabu" onclick="zoldbabu()">Zöld</button>
+        <button class="babuvalaszto" id="narancsbabu" onclick="narancsbabu()">Narancs</button>
+    </div>
+    <button id="start" style="margin: auto; display: block; margin-top: 10px; visibility: hidden;" onclick="START()">START</button>
+    
+    <table id="tabla">
+        <tr>
+            <td><img id="31" src="mezo.png"></td>
+            <td><img id="32" src="mezo.png"></td>
+            <td><img id="33" src="mezo.png"></td>
+            <td><img id="34" src="mezo.png"></td>
+            <td><img id="35" src="mezo.png"></td>
+            <td><img id="36" src="mezo.png"></td>
+            <td width="100px"></td>
+            <td><img id="0" src="mezokekpirossargazoldnarancs.png"></td>
+            <td><img id="1" src="mezo.png"></td>
+            <td><img id="2" src="mezo.png"></td>
+            <td><img id="3" src="mezo.png"></td>
+            <td><img id="4" src="mezo.png"></td>
+            <td><img id="5" src="mezo.png"></td>
+        </tr>
+
+        <tr>
+            <td><img id="30" src="mezo.png"></td>
+            <td rowspan="5" colspan="11">
+                <h2 id="h21">Random feladvány sorsoló</h2>
+
+                <script src="js.js"></script>
+                <input readonly type=text name="WordBox" id="wordboxsz"><br>
+                <input type=button value="Generálás" onClick="PickRandomWord()" id="buttonf">
+
+
+                <h2 id="h22">Kivitelezés sorsoló</h2>
+
+                <script src="cselekves.js"></script>
+                <input readonly type=text name="WordCell" id="wordboxcsel"><br>
+                <input type=button value="Generálás" onClick="PickRandomFormat()" id="buttonk">
+                
+                <div id="vezerlo">
+                    <button id="talalt" onclick="talalt()">Kitalálták</button>
+                    <button id="nemtalalt" onclick="nemtalalt()">Nem találták ki</button>
+                    <button id="next" onclick="next()">Következő játékos</button>
+                    <br>
+                    <button class="pontszin" id="kektalalt" onclick="talaltpont(), ujpontkek()">Kék</button>
+                    <button class="pontszin" id="pirostalalt" onclick="talaltpont(), ujpontpiros()">Piros</button>
+                    <button class="pontszin" id="sargatalalt" onclick="talaltpont(), ujpontsarga()">Sárga</button>
+                    <button class="pontszin" id="zoldtalalt" onclick="talaltpont(), ujpontzold()">Zöld</button>
+                    <button class="pontszin" id="narancstalalt" onclick="talaltpont(), ujpontnarancs()">Narancs</button>
+                    <br>
+                    <button class="babuvalaszto" id="egypont" onclick="lepes1(), lepes(), talaltpontoff()">1</button>
+                    <button class="babuvalaszto" id="ketpont" onclick="lepes2(), lepes(), talaltpontoff()">2</button>
+                    <button class="babuvalaszto" id="harompont" onclick="lepes3(), lepes(), talaltpontoff()">3</button>
+                    <button class="babuvalaszto" id="negypont" onclick="lepes4(), lepes(), talaltpontoff()">4</button>
+                    <button class="babuvalaszto" id="otpont" onclick="lepes5(), lepes(), talaltpontoff()">5</button>
+                </div>
+                <br>
+            </td>
+            <td><img id="6" src="mezo.png"></td>
+        </tr>
+
+        <tr>
+            <td><img id="29" src="mezo.png"></td>
+            <td><img id="7" src="mezo.png"></td>
+        </tr>
+
+        <tr>
+            <td><img id="28" src="mezo.png"></td>
+            <td><img id="8" src="mezo.png"></td>
+        </tr>
+
+        <tr>
+            <td><img id="27" src="mezo.png"></td>
+            <td><img id="9" src="mezo.png"></td>
+        </tr>
+
+        <tr>
+            <td><img id="26" src="mezo.png"></td>
+            <td><img id="10" src="mezo.png"></td>
+        </tr>
+
+        <tr>
+            <td><img id="25" src="mezo.png"></td>
+            <td></td>
+            <td id="kekkep" class="babuk"><img src="kekbabu.png" class="babu" id="kekbabukep"><button id="pluszkek"></button><p id="kekered" style="margin-top: 100px;"><span id="kekeredspan">START</span></p></td>
+            <td></td>
+            <td id="piroskep" class="babuk"><img src="pirosbabu.png" class="babu" id="pirosbabukep"><button id="pluszpiros"></button><p id="pirosered"><span id="piroseredspan">START</span></p></td>
+            <td></td>
+            <td id="sargakep" class="babuk"><img src="sargababu.png" class="babu" id="sargababukep"><button id="pluszsarga"></button><p id="sargaered"><span id="sargaeredspan">START</span></p></td>
+            <td></td>
+            <td id="zoldkep" class="babuk"><img src="zoldbabu.png" class="babu" id="zoldbabukep"><button id="pluszzold"></button><p id="zoldered"><span id="zolderedspan">START</span></p></td>
+            <td></td>
+            <td id="narancskep" class="babuk"><div><img src="narancsbabu.png" class="babu" id="narancsbabukep"><button id="plusznarancs"></button><p id="narancsered"><span id="narancseredspan">START</span></p></td>
+            <td></td>
+            <td><img id="11" src="mezo.png"></td>
+        </tr>
+
+        <tr>
+            <td><img id="24" src="mezo.png"></td>
+            <td><img id="23" src="mezo.png"></td>
+            <td><img id="22" src="mezo.png"></td>
+            <td><img id="21" src="mezo.png"></td>
+            <td><img id="20" src="mezo.png"></td>
+            <td><img id="19" src="mezo.png"></td>
+            <td><img id="18" src="mezo.png"></td>
+            <td><img id="17" src="mezo.png"></td>
+            <td><img id="16" src="mezo.png"></td>
+            <td><img id="15" src="mezo.png"></td>
+            <td><img id="14" src="mezo.png"></td>
+            <td><img id="13" src="mezo.png"></td>
+            <td><img id="12" src="mezo.png"></td>
+        </tr>
+    </table>
+
+    <script src="js.js"></script>
+    <script src="cselekves.js"></script>
+    <script src="szavak.js"></script>
+    <script src="tabla.js"></script>
+    <script src="pontszam.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>

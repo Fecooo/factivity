@@ -1,11 +1,3 @@
-body {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 1.2em;
-    background: rgb(155, 153, 153);
-    color: #fff;
-    font-weight: 300;
-}
-
 table {
     margin: auto;
     width: 45%;
@@ -79,7 +71,7 @@ h2 {
     font-weight: bold;
 }
 
-#buttonf:hover, #buttonk:hover, .babuvalaszto:hover, #start:hover, #talalt:hover, #nemtalalt:hover, #next:hover {
+#buttonf:hover, #buttonk:hover, .babuvalaszto:hover, #start:hover, #talalt:hover, #nemtalalt:hover, #next:hover, .pontszin:hover {
     background: #12b0ff;
 }
 
@@ -102,13 +94,26 @@ h2 {
 }
 
 #talalt:disabled, #nemtalalt:disabled, #next:disabled, #buttonf:disabled, #buttonk:disabled, #lepes:disabled, 
-#egypont:disabled, #ketpont:disabled, #harompont:disabled, #negypont:disabled, #otpont:disabled {
+#egypont:disabled, #ketpont:disabled, #harompont:disabled, #negypont:disabled, #otpont:disabled, .pontszin:disabled {
     background-color: rgb(43, 76, 77);
 }
 #talalt:disabled:hover, #nemtalalt:disabled:hover, #next:disabled:hover, #buttonf:disabled:hover, #buttonk:disabled:hover, 
-#egypont:disabled:hover, #ketpont:disabled:hover, #harompont:disabled:hover, #negypont:disabled:hover, #otpont:disabled:hover {
+#egypont:disabled:hover, #ketpont:disabled:hover, #harompont:disabled:hover, #negypont:disabled:hover, #otpont:disabled:hover, .pontszin:disabled:hover {
     background-color: rgb(43, 76, 77);
     cursor: text;
+}
+
+.pontszin {
+    width: 100px;
+    height: 35px;
+    background: #0b7fba;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 #plusznarancs, #pluszkek, #pluszzold, #pluszpiros, #pluszsarga {
@@ -174,7 +179,9 @@ h2 {
     visibility: hidden;
 }
 
-
+.babuk {
+    background-color: rgb(179, 179, 179);
+}
 
 
 /*.szia {
