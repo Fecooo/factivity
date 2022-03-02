@@ -143,6 +143,19 @@ function talalt(){
     document.getElementById("sargatalalt").disabled = false;
     document.getElementById("zoldtalalt").disabled = false;
     document.getElementById("narancstalalt").disabled = false;
+
+    if (nextplayer == 0){
+        document.getElementById("kektalalt").disabled = true;
+    } else if (nextplayer == 1){
+        document.getElementById("pirostalalt").disabled = true;
+    } else if (nextplayer == 2){
+        document.getElementById("sargatalalt").disabled = true;
+    } else if (nextplayer == 3){
+        document.getElementById("zoldtalalt").disabled = true;
+    } else if (nextplayer == 4){
+        document.getElementById("narancstalalt").disabled = true;
+    }
+
 }
 
 function talaltpont(){    
