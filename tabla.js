@@ -8,6 +8,8 @@ var nyert = 0;
 var szin = "";
 var nextplayer = 0;
 var ujpontozas = 0;
+var randomformat = 0;
+var randomword = 0;
 //#endregion
 
 //#region oldal betoltes
@@ -250,11 +252,77 @@ function nemtalalt(){
 
 //#region kovetkezo jatekos
 function next() {
-    if (nextplayer == 0 || nextplayer == 1 || nextplayer == 2 || nextplayer == 3){
-        nextplayer++;
-    } else {
-        nextplayer = 0;
+    if (nextplayer == 0){
+        if(piros < 36){
+            nextplayer = 1;
+        }
+        else if(sarga < 36){
+            nextplayer = 2;
+        }
+        else if(zold < 36){
+            nextplayer = 3;
+        }
+        else if(narancs < 36){
+            nextplayer = 4;
+        }
     }
+    else if(nextplayer == 1){
+        if(sarga < 36){
+            nextplayer = 2;
+        }
+        else if(zold < 36){
+            nextplayer = 3;
+        }
+        else if(narancs < 36){
+            nextplayer = 4;
+        }
+        else if (kek < 36){
+            nextplayer = 0;
+        }
+    }
+    else if(nextplayer == 2){
+        if(zold < 36){
+            nextplayer = 3;
+        }
+        else if(narancs < 36){
+            nextplayer = 4;
+        }
+        else if (kek < 36){
+            nextplayer = 0;
+        }
+        else if(piros < 36){
+            nextplayer = 1;
+        }
+    }
+    else if(nextplayer == 3){
+        if(narancs < 36){
+            nextplayer = 4;
+        }
+        else if (kek < 36){
+            nextplayer = 0;
+        }
+        else if(piros < 36){
+            nextplayer = 1;
+        }
+        else if(sarga < 36){
+            nextplayer = 2;
+        }
+    }
+    else if (nextplayer == 4){
+        if(kek < 36){
+            nextplayer = 0;
+        }
+        else if(piros < 36){
+            nextplayer = 1;
+        }
+        else if(sarga < 36){
+            nextplayer = 2;
+        }
+        else if(zold < 36){
+            nextplayer = 3;
+        }
+    }
+    
     kovijatekos();
     document.getElementById("wordboxsz").value = "";
     document.getElementById("wordboxcsel").value = "";
@@ -1136,3 +1204,93 @@ function plusznarancs(){
     }
 }*/
 //#endregion
+
+var NumberOfWords = 16252
+var NumberOfNumbers = 16252
+
+var words = new BuildArray(NumberOfWords)
+var numbers = new BuildArray(NumberOfNumbers)
+// Use the following variables to 
+// define your random words:
+document.writeln("<script type='text/javascript' src='szavak.js'></script>");
+document.writeln("<script type='text/javascript' src='szamok.js'></script>");
+
+function BuildArray(size) {
+    this.length = size
+    for (var i = 1; i <= size; i++) {
+        this[i] = null
+    }
+    return this
+}
+
+function PickRandomWord() {
+    // Generate a random number between 1 and NumberOfWords
+    var rnd = Math.ceil(Math.random() * NumberOfWords)
+    // Display the word inside the text box
+    document.getElementById("wordboxsz").value = words[rnd] + " (" + numbers[rnd] + ")"
+
+    console.log(words[rnd] + " (" + numbers[rnd] + ")")
+
+    document.getElementById("buttonf").disabled = true;
+
+    randomword = 1;
+    if (randomformat == 1 && randomword == 1){
+        document.getElementById("talalt").disabled = false;
+        document.getElementById("nemtalalt").disabled = false;
+        document.getElementById("buttonk").disabled = true;
+    }
+}
+
+
+function ok1() {
+    document.getElementById("jatekos1").readOnly = true;
+}
+function ok2() {
+    document.getElementById("jatekos2").readOnly = true;
+}
+function ok3() {
+    document.getElementById("jatekos3").readOnly = true;
+}
+function ok4() {
+    document.getElementById("jatekos4").readOnly = true;
+}
+function ok5() {
+    document.getElementById("jatekos5").readOnly = true;
+}
+
+var szavakszama = 3
+
+var szo = new BuildArray(szavakszama)
+
+// Use the following variables to 
+// define your random words:
+szo[1] = "rajzol"
+szo[2] = "mutogat"
+szo[3] = "körülír"
+
+function BuildArray(size) {
+    this.length = size
+    for (var i = 1; i <= size; i++) {
+        this[i] = null
+    }
+    return this
+}
+
+function PickRandomFormat() {
+    // Generate a random number between 1 and NumberOfWords
+    var rnd = Math.ceil(Math.random() * 3)
+
+    // Display the word inside the text box
+    document.getElementById("wordboxcsel").value = szo[rnd]
+
+    console.log(szo[rnd])
+
+    randomformat = 1;
+    if (randomformat == 1 && randomword == 1){
+        document.getElementById("talalt").disabled = false;
+        document.getElementById("nemtalalt").disabled = false;
+        document.getElementById("buttonk").disabled = true;
+    }
+
+    document.getElementById("buttonk").disabled = true;
+}
