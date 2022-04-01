@@ -1238,7 +1238,10 @@ function PickRandomWord() {
         document.getElementById("talalt").disabled = false;
         document.getElementById("nemtalalt").disabled = false;
         document.getElementById("buttonk").disabled = true;
+        randomformat = 0;
+        randomword = 0;
     }
+
 }
 
 
@@ -1290,6 +1293,8 @@ function PickRandomFormat() {
         document.getElementById("talalt").disabled = false;
         document.getElementById("nemtalalt").disabled = false;
         document.getElementById("buttonk").disabled = true;
+        randomformat = 0;
+        randomword = 0;
     }
 
     document.getElementById("buttonk").disabled = true;
